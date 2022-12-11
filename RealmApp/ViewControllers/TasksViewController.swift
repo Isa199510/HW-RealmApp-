@@ -114,11 +114,4 @@ extension TasksViewController {
             tableView.insertRows(at: [rowIndex], with: .automatic)
         }
     }
-    
-    private func saveIsComplete(task: String, withNote note: String) {
-        StorageManager.shared.save(task, withNote: note, to: taskList) { task in
-            let rowIndex = IndexPath(row: completedTasks.index(of: task) ?? 0, section: 1)
-            tableView.insertRows(at: [rowIndex], with: .automatic)
-        }
-    }
 }
